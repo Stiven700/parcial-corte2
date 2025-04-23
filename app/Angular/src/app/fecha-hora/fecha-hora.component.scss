@@ -1,0 +1,22 @@
+ion-card {
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+ion-label {
+  color: #fff;
+  font-weight: bold;
+}
+
+ion-item {
+  --background: transparent;
+  border: 1px solid #444;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+ion-select, ion-datetime {
+  color: white;
+}

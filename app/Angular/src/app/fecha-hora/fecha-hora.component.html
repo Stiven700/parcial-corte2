@@ -1,0 +1,46 @@
+<ion-row class="ion-justify-content-center">
+  <ion-col size="15" size-md="10" size-lg="8">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Seleccione Fecha y Hora</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content [formGroup]="fechaHoraForm">
+
+        <!-- FECHA -->
+        <ion-item button (click)="abrirSelectorFecha()">
+          <ion-label position="stacked">Fecha</ion-label>
+          <ion-input
+            [value]="fechaHoraForm.value.fecha | date:'fullDate'"
+            readonly
+          ></ion-input>
+        </ion-item>
+
+        <ion-modal [isOpen]="mostrarCalendario" (didDismiss)="cerrarSelectorFecha()">
+          <ng-template>
+            <ion-content>
+              <ion-datetime
+                presentation="date"
+                [min]="minDate"
+                (ionChange)="seleccionarFecha($event)"
+                [value]="fechaHoraForm.value.fecha"
+              ></ion-datetime>
+              <ion-button expand="full" (click)="cerrarSelectorFecha()">Aceptar</ion-button>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+        <!-- HORA -->
+        <ion-item>
+          <ion-label position="stacked">Hora</ion-label>
+          <ion-select formControlName="hora" placeholder="Seleccione una hora">
+            <ion-select-option *ngFor="let hora of horasDisponibles" [value]="hora">
+              {{ hora }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>

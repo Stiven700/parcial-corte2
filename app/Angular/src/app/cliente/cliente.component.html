@@ -1,0 +1,68 @@
+<ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="15" size-md="10" size-lg="8">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">Formulario de Cliente</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <form [formGroup]="clienteForm">
+
+            <div class="form-group">
+              <label>Nombre</label>
+              <ion-input type="text" placeholder="Ingrese el nombre del cliente" formControlName="nombre"></ion-input>
+              <ion-text color="danger" *ngIf="clienteForm.get('nombre')?.invalid && clienteForm.get('nombre')?.touched">
+                <small *ngIf="clienteForm.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+                <small *ngIf="clienteForm.get('nombre')?.errors?.['minlength']">Debe tener al menos 3 caracteres.</small>
+              </ion-text>
+            </div>
+
+            <div class="form-group">
+              <label>Primer Apellido</label>
+              <ion-input type="text" placeholder="Ingrese el primer apellido" formControlName="primerApellido"></ion-input>
+              <ion-text color="danger" *ngIf="clienteForm.get('primerApellido')?.invalid && clienteForm.get('primerApellido')?.touched">
+                <small *ngIf="clienteForm.get('primerApellido')?.errors?.['required']">El primer apellido es obligatorio.</small>
+                <small *ngIf="clienteForm.get('primerApellido')?.errors?.['minlength']">Debe tener al menos 3 caracteres.</small>
+              </ion-text>
+            </div>
+
+            <div class="form-group">
+              <label>Segundo Apellido</label>
+              <ion-input type="text" placeholder="Ingrese el segundo apellido" formControlName="segundoApellido"></ion-input>
+            </div>
+
+            <div class="form-group">
+              <label>Tipo de Documento</label>
+              <ion-select formControlName="tipoDocumento" interface="popover" placeholder="Seleccione una opción">
+                <ion-select-option value="DNI">DNI</ion-select-option>
+                <ion-select-option value="Pasaporte">Pasaporte</ion-select-option>
+                <ion-select-option value="Cédula">Cédula</ion-select-option>
+              </ion-select>
+              <ion-text color="danger" *ngIf="clienteForm.get('tipoDocumento')?.invalid && clienteForm.get('tipoDocumento')?.touched">
+                <small>El tipo de documento es obligatorio.</small>
+              </ion-text>
+            </div>
+
+            <div class="form-group">
+              <label>Número de Documento</label>
+              <ion-input type="text" placeholder="Ingrese el número de documento" formControlName="numeroDocumento"></ion-input>
+              <ion-text color="danger" *ngIf="clienteForm.get('numeroDocumento')?.invalid && clienteForm.get('numeroDocumento')?.touched">
+                <small *ngIf="clienteForm.get('numeroDocumento')?.errors?.['required']">El número es obligatorio.</small>
+                <small *ngIf="clienteForm.get('numeroDocumento')?.errors?.['pattern']">Debe ser un número válido.</small>
+              </ion-text>
+            </div>
+
+            <div class="form-group">
+              <label>Teléfono</label>
+              <ion-input type="text" placeholder="Ingrese el número de teléfono" formControlName="telefono"></ion-input>
+              <ion-text color="danger" *ngIf="clienteForm.get('telefono')?.invalid && clienteForm.get('telefono')?.touched">
+                <small *ngIf="clienteForm.get('telefono')?.errors?.['pattern']">Debe ser un número válido.</small>
+              </ion-text>
+            </div>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

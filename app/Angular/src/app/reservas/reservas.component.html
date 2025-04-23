@@ -1,0 +1,15 @@
+<ion-content class="reserva-content">
+  <div class="contenedor-reserva">
+    <h2>Reservar Mesa</h2>
+
+    <app-cliente></app-cliente>
+    <app-fecha-hora></app-fecha-hora>
+    <app-mesa></app-mesa>
+
+    <ion-button expand="block" type="button" class="btn-reserva" (click)="confirmarReserva()">
+      Confirmar Reserva
+    </ion-button>
+
+    <!-- ✅ Lista de reservas se muestra sin necesidad de pasarle datos -->
+  </div>
+</ion-content>

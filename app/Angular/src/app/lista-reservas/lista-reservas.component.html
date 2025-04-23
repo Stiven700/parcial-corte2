@@ -1,0 +1,25 @@
+<ion-content class="lista-reservas-content">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Reservas Confirmadas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="titulo-tabla">
+          <ion-col><strong>Cliente</strong></ion-col>
+          <ion-col><strong>Documento</strong></ion-col>
+          <ion-col><strong>Fecha</strong></ion-col>
+          <ion-col><strong>Hora</strong></ion-col>
+          <ion-col><strong>Mesa</strong></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let reserva of reservas">
+          <ion-col>{{ reserva.cliente.nombre }} {{ reserva.cliente.primerApellido }}</ion-col>
+          <ion-col>{{ reserva.cliente.numeroDocumento }}</ion-col>
+          <ion-col>{{ reserva.fecha }}</ion-col>
+          <ion-col>{{ reserva.hora }}</ion-col>
+          <ion-col>{{ reserva.mesa.numero }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="15" size-md="10" size-lg="8">
+      <div class="mesa-container">
+        <h2>Seleccione una Mesa</h2>
+        <div class="mesa-list">
+          <!-- Iteramos sobre las mesas para mostrarlas -->
+          <div *ngFor="let mesa of mesas"
+              [class.selected]="mesa === selectedMesa" 
+              [class.disponible]="mesa.disponible" 
+              [class.no-disponible]="!mesa.disponible"
+              (click)="selectMesa(mesa)">
+            <p>Mesa {{ mesa.numero }}</p>
+            <p>Capacidad: {{ mesa.capacidad }} personas</p>
+            <p *ngIf="!mesa.disponible" class="no-disponible-text">No Disponible</p>
+          </div>
+        </div>
+
+        <!-- Mostrar la mesa seleccionada -->
+        <div *ngIf="selectedMesa">
+          <h3>Mesa seleccionada: {{ selectedMesa.numero }}</h3>
+          <p>Capacidad: {{ selectedMesa.capacidad }} personas</p>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

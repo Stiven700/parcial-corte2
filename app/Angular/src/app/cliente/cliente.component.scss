@@ -1,0 +1,87 @@
+/* Contenedor general del formulario */
+:host {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Card unificado y limpio */
+ion-card {
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  background: #1e1e1e; /* Fondo oscuro como el resto */
+  color: #fff;
+}
+
+/* Título centrado */
+ion-card-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Contenedor de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Label encima del campo */
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+/* Estilo uniforme de inputs */
+ion-input,
+ion-select {
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #2c2c2c;
+  font-size: 16px;
+  color: #fff;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+/* Focus visible */
+ion-input:focus-within,
+ion-select:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Texto de error */
+ion-text[color="danger"] {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #ff6b6b;
+}
+
+/* Botón de acción */
+ion-button {
+  height: 48px;
+  font-weight: bold;
+  border-radius: 8px;
+  --background: #007bff;
+  --color: #fff;
+}
+
+/* Botón deshabilitado */
+ion-button[disabled] {
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  ion-card {
+    padding: 16px;
+  }
+}
